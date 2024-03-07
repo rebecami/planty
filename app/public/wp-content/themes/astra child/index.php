@@ -41,4 +41,6 @@ if ( astra_page_layout() == 'right-sidebar' ) :
 
 endif;
 
-get_footer();
+get_footer();?>
+
+
