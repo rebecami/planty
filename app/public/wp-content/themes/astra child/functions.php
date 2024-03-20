@@ -7,6 +7,24 @@ function theme_enqueue_styles()
 }
 
 
+function montheme_menu_class()
+{
+    /*var_dump(func_get_args($classes));
+    die();*/
+    $classes[] = 'nav-item';
+    return $classes;
+}
+
+function montheme_menu_link_class($attrs)
+{
+    $attrs['class'] = 'nav-link';
+    return $attrs;
+}
+
+add_filter('nav_menu_css_class', 'montheme_menu_class');
+add_filter('nav_menu_link_attributes', 'montheme_menu_link_class');
+
+
 add_filter( 'wp_nav_menu_items', 'add_extra_item_to_nav_menu', 10, 2 );
 function add_extra_item_to_nav_menu( $items, $args ) {
    // var_dump($args->menu->term_id);exit; 
